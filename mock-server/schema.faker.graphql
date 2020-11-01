@@ -1,0 +1,22 @@
+
+type Product {
+  id: ID
+  name: String @fake(type: productName)
+  price: Float @fake(type: money, options: {minMoney: 10.00, maxMoney: 100.00})
+}
+
+type Query {
+  product(id: ID!): Product
+  allProducts: [Product!]!
+}
+
+type Mutation {
+  addProduct(name: String!, price: Float!): Product!
+  updateProduct(id: ID!, name: String!, price: Float!): Product!
+  removeProduct(id: ID!): Product!
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
