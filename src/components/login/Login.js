@@ -11,7 +11,7 @@ const Login = () => {
     dispatch(attemptLogin({name, passw}));
 
     event.preventDefault();
-  }
+  };
   return (
     <div className="columns is-justify-content-center">
       <div className="column is-full-mobile is-half-desktop">
@@ -49,7 +49,7 @@ const Login = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Login;
 
