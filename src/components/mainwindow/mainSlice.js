@@ -101,7 +101,7 @@ export const createClient = (name, category) => dispatch => {
     .catch(error => {
       console.log(error);
     })
-}
+};
 
 export const updateClient = (id, name, category) => dispatch => {
   const data = {};
@@ -124,7 +124,7 @@ export const updateClient = (id, name, category) => dispatch => {
     .catch(error => {
       console.log(error);
     })
-}
+};
 
 export const deleteClient = id => dispatch => {
   axios.delete(`http://localhost:3004/clients/${id}`)
@@ -134,7 +134,7 @@ export const deleteClient = id => dispatch => {
     .catch(error => {
       console.log(error);
     })
-}
+};
 
 export const getProducts = () => dispatch => {
 
@@ -163,7 +163,7 @@ export const createProduct = (name, price) => dispatch => {
     dispatch(getProducts());
   })
   .catch(error => console.log(error));
-}
+};
 
 export const updateProduct = (id, name, price) => dispatch => {
   client
@@ -176,7 +176,7 @@ export const updateProduct = (id, name, price) => dispatch => {
     dispatch(getProducts());
   })
   .catch(error => console.log(error));
-}
+};
 
 export const deleteProduct = id => dispatch => {
   client
@@ -189,7 +189,7 @@ export const deleteProduct = id => dispatch => {
     dispatch(getProducts());
   })
   .catch(error => console.log(error));
-}
+};
 
 export const selectActiveTab = state => state.main.tab;
 export const selectSectionName = state => state.main.section;

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createClient, updateClient, deleteClient } from '../mainwindow/mainSlice';
+import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {createClient, deleteClient, updateClient} from '../mainwindow/mainSlice';
 import './content.sass';
 
 const ClientContent = ({content}) => {
@@ -23,11 +23,11 @@ const ClientContent = ({content}) => {
 
     clear();
     event.preventDefault();
-  }
+  };
 
   const handleChange = setter => event => {
     setter(event.target.value);
-  }
+  };
 
   const handleRow = id => event => {
     setClient(id);
@@ -35,26 +35,25 @@ const ClientContent = ({content}) => {
     setClientCategory(content[id].category);
 
     event.preventDefault();
-  }
+  };
 
   const clear = () => {
     setClient("");
     setClientName("");
     setClientCategory("");
-  }
+  };
 
   const handleClear = event => {
-    clear()
+    clear();
 
     event.preventDefault();
-  }
+  };
 
   const handleDelete = () => {
-    const id = clientToDelete;
-    dispatch(deleteClient(id));
+    dispatch(deleteClient(clientToDelete));
 
     setClientToDelete(0);
-  }
+  };
 
   return (
     <div className="container content">
@@ -146,7 +145,7 @@ const ClientContent = ({content}) => {
       </div>
     </div>
   );
-}
+};
 
 export default ClientContent;
 

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { createProduct, updateProduct, deleteProduct } from '../mainwindow/mainSlice';
+import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {createProduct, deleteProduct, updateProduct} from '../mainwindow/mainSlice';
 import './content.sass';
 
 const ProductContent = ({content}) => {
@@ -23,11 +23,11 @@ const ProductContent = ({content}) => {
 
     clear();
     event.preventDefault();
-  }
+  };
 
   const handleChange = setter => event => {
     setter(event.target.value);
-  }
+  };
 
   const handleRow = id => event => {
     setProduct(id);
@@ -35,26 +35,25 @@ const ProductContent = ({content}) => {
     setProductPrice(content[id].price);
 
     event.preventDefault();
-  }
+  };
 
   const clear = () => {
     setProduct("");
     setProductName("");
     setProductPrice("");
-  }
+  };
 
   const handleClear = event => {
     clear();
 
     event.preventDefault();
-  }
+  };
 
   const handleDelete = () => {
-    const id = productToDelete;
-    dispatch(deleteProduct(id));
+    dispatch(deleteProduct(productToDelete));
 
     setProductToDelete(0);
-  }
+  };
 
   return (
     <div className="container content">
@@ -146,7 +145,7 @@ const ProductContent = ({content}) => {
       </div>
     </div>
   );
-}
+};
 
 export default ProductContent;
 

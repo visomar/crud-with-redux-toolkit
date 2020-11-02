@@ -24,6 +24,6 @@ const Content = ({section}) => {
     default:
       return null;
   }
-}
+};
 
 export default Content;

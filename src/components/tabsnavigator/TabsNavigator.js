@@ -5,11 +5,11 @@ const TabsNavigator = ({active, onShowClients, onShowProducts}) => {
   const handleClientsClick = (e) => {
     onShowClients();
     e.preventDefault();
-  }
+  };
   const handleProductsClick = (e) => {
     onShowProducts();
     e.preventDefault();
-  }
+  };
   
   return (
     <div className="tabs is-boxed">
@@ -27,7 +27,7 @@ const TabsNavigator = ({active, onShowClients, onShowProducts}) => {
       </ul>
     </div>
   );
-}
+};
 
 export default TabsNavigator;
 

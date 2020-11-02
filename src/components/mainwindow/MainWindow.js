@@ -16,10 +16,10 @@ function MainWindow() {
 
   const handleShowClients = () => {
     dispatch(getClients());
-  }
+  };
   const handleShowProducts = () => {
     dispatch(getProducts());
-  }
+  };
 
   return (
   	<>
